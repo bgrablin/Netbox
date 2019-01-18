@@ -1,0 +1,14 @@
+
+*.exe
+
+*.info
+
+*.retry
+
+.vscode/
+
+\.terraform/plugins/windows_amd64/
+
+*.tfstate
+
+terraform\.tfstate\.backup
