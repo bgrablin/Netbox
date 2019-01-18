@@ -68,7 +68,7 @@ resource "aws_instance" "netbox" {
           # "sudo docker swarm join-token --quiet worker > /home/ec2-user/token",
           "git clone https://github.com/bgrablin/Netbox.git",
           "git clone https://github.com/ninech/netbox-docker.git",
-          "cd ~/Netbox && docker-compose -f ~/netbox-docker/docker-compose.yml up -d"
+          # "cd ~/Netbox && docker-compose -f ~/netbox-docker/docker-compose.yml up -d"
           # "ansible-playbook -i /home/ec2-user/Docker/Ansible/hosts /home/ec2-user/Docker/Ansible/main.yml",
       ]
   }
