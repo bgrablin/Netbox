@@ -68,7 +68,7 @@ resource "aws_instance" "netbox" {
           # "sudo docker swarm join-token --quiet worker > /home/ec2-user/token",
           "git clone https://github.com/bgrablin/Netbox.git",
           "git clone https://github.com/ninech/netbox-docker.git",
-          "cd ~/netbox-docker && docker-compose -f ~/Netbox/docker-compose.yml"
+          # "cd ~/netbox-docker && docker-compose -f ~/Netbox/docker-compose.yml"
           # "ansible-playbook -i /home/ec2-user/Docker/Ansible/hosts /home/ec2-user/Docker/Ansible/main.yml",
       ]
   }
@@ -86,4 +86,6 @@ resource "aws_route53_record" "netbox-ns" {
   type    = "A"
   ttl = "300"
   records = ["${aws_eip_association.eip_netbox.public_ip}"]
+
+  depends_on  = ["aws_eip_association.eip_netbox"]
 }
